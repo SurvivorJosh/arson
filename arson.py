@@ -1,8 +1,13 @@
-import asyncio, aiohttp, os, sys, threading
-import datetime, time, requests, random
-from itertools                                                           import cycle
-from requests_futures.sessions                                           import FuturesSession
-from pystyle                                                             import Add, Center, Anime, Colors, Colorate, Write, System
+
+try:
+    import asyncio, aiohttp, os, sys, threading
+    import datetime, time, requests, random
+    from itertools                                                           import cycle
+    from requests_futures.sessions                                           import FuturesSession
+    from pystyle                                                             import Add, Center, Anime, Colors, Colorate, Write, System
+except ImportError as e:
+    os.system('pip install -r requirements.txt')
+    
 p = open("proxies.txt").read().split("\n")
 sd = len(p)
 try:
