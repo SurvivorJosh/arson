@@ -1,6 +1,1 @@
 pystyle
-requests
-aiohttp
-threading
-itertools
-datetime
