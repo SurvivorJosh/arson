@@ -66,9 +66,9 @@ def get_members():
 def ban_tasks(session, id):
     proxy = open("proxies.txt")
     proxies = cycle(proxy)
-    
+    proxy_form = f'http://' + next(proxies)
     try:    
-        r = session.put(f"https://discord.com/api/v9/guilds/{guild_id}/bans/{id}", headers=headers, proxies={'http': f'http://' + next(proxies)})
+        r = session.put(f"https://discord.com/api/v9/guilds/{guild_id}/bans/{id}", headers=headers, proxies={'http': proxy_form, 'https': proxy_form})
         
            
     except:
